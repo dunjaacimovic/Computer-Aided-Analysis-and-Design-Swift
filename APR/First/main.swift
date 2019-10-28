@@ -16,9 +16,18 @@ import FileKit
 //_ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
 
 //let path = Path("/Examples/M1.txt")
-//let fileHandle = path.fileHandleForReading
+let path = Bundle.main.path(forResource: "M1", ofType: "txt", inDirectory: "Examples")
+//let fileHandle = Path(path!).fileHandleForReading
 //
 //let data = fileHandle?.availableData
-print(try String(contentsOfFile: "/Examples/M1.txt"))
-
+//
+//print(String(data: data!, encoding: .utf8))
+//print(try? String(contentsOfFile: path))
+let matrix = readToMatrixFromPath(path)
+func zadatak1() {
+    guard let mat = matrix else { return }
+//    print(matrix?.elements[0][0].map { String($0) })
+}
+zadatak1()
+//print(Matrix.readToMatrixFromPath(path))
 
