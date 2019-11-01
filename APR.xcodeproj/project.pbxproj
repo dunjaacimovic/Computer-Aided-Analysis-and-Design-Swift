@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C08166E236C84E200F24FCB /* Examples in Resources */ = {isa = PBXBuildFile; fileRef = 4C08166D236C84E200F24FCB /* Examples */; };
 		4C264C562364AE6F00645561 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C264C552364AE6F00645561 /* Matrix.swift */; };
 		4C264C582365585C00645561 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C264C572365585C00645561 /* main.swift */; };
 		4C9CA2CC23649D2500FF872D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9CA2CB23649D2500FF872D /* Assets.xcassets */; };
-		4CA36C492365C10E00681E0A /* Examples in Resources */ = {isa = PBXBuildFile; fileRef = 4CA36C482365C10E00681E0A /* Examples */; };
 		D5514EA7970028594241475A /* Pods_APR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BD43798F36E0768554B328 /* Pods_APR.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C08166D236C84E200F24FCB /* Examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Examples; sourceTree = "<group>"; };
 		4C264C552364AE6F00645561 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		4C264C572365585C00645561 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4C9CA2C423649D2300FF872D /* APR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +41,6 @@
 		4C9CA2D123649D2500FF872D /* APR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APR.entitlements; sourceTree = "<group>"; };
 		4C9CA2D623649D2500FF872D /* APRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9CA2E123649D2500FF872D /* APRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CA36C482365C10E00681E0A /* Examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Examples; sourceTree = "<group>"; };
 		50BD43798F36E0768554B328 /* Pods_APR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72485EEC93D0C3E6C7C1CC49 /* Pods-APR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APR.debug.xcconfig"; path = "Target Support Files/Pods-APR/Pods-APR.debug.xcconfig"; sourceTree = "<group>"; };
 		CA3D039E89EB39883C2B50B0 /* Pods-APR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APR.release.xcconfig"; path = "Target Support Files/Pods-APR/Pods-APR.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		4C264C542364AD3E00645561 /* First */ = {
 			isa = PBXGroup;
 			children = (
-				4CA36C482365C10E00681E0A /* Examples */,
+				4C08166D236C84E200F24FCB /* Examples */,
 				4C264C552364AE6F00645561 /* Matrix.swift */,
 				4C264C572365585C00645561 /* main.swift */,
 			);
@@ -200,6 +200,11 @@
 				TargetAttributes = {
 					4C9CA2C323649D2300FF872D = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					4C9CA2D523649D2500FF872D = {
 						CreatedOnToolsVersion = 10.3;
@@ -237,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9CA2CC23649D2500FF872D /* Assets.xcassets in Resources */,
-				4CA36C492365C10E00681E0A /* Examples in Resources */,
+				4C08166E236C84E200F24FCB /* Examples in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +464,6 @@
 			baseConfigurationReference = 72485EEC93D0C3E6C7C1CC49 /* Pods-APR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = APR/APR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = APR/Info.plist;
@@ -478,7 +482,6 @@
 			baseConfigurationReference = CA3D039E89EB39883C2B50B0 /* Pods-APR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = APR/APR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = APR/Info.plist;
