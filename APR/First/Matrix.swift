@@ -15,7 +15,15 @@ struct Matrix {
     var elements: [Double]
 }
 
-// MARK: - Public functions -
+extension Matrix {
+    init(rowCount: Int, columnCount: Int) {
+        self.rowCount = rowCount
+        self.columnCount = columnCount
+        elements = Array(repeating: 0.0, count: rowCount*columnCount)
+    }
+}
+
+// MARK: - Subscript -
 
 extension Matrix {
     
@@ -36,6 +44,25 @@ extension Matrix {
             elements.replaceSubrange(row*columnCount..<(row+1)*columnCount, with: newValue)
         }
     }
+}
+
+// MARK: - Equatable -
+
+extension Matrix: Equatable {
+    
+    static func ==(lhs: Matrix, rhs: Matrix) -> Bool {
+        return lhs.rowCount == rhs.rowCount
+            && lhs.columnCount == rhs.columnCount
+            && lhs.elements == rhs.elements
+    }
+}
+
+// MARK: - Printing format -
+
+extension Matrix: CustomStringConvertible {
+    var description: String {
+        return self.toString()
+    }
     
     func toString() -> String {
         var matrix = String()
@@ -49,13 +76,36 @@ extension Matrix {
     }
 }
 
-extension Matrix: Equatable {
-    
-    static func ==(lhs: Matrix, rhs: Matrix) -> Bool {
-        return lhs.rowCount == rhs.rowCount
-            && lhs.columnCount == rhs.columnCount
-            && lhs.elements == rhs.elements
-    }
-}
+// MARK: - Write to and read from a file -
 
+extension Matrix {
+    
+    // MARK: - Read and initalize new matrix from a file
+    init(matrixPath: String?){
+        guard let path = matrixPath, let elements = try? String(contentsOfFile: path) else {
+            fatalError("Unable to read matrix from this path.")
+        }
+        
+        // Split string and create a matrix
+        let lines = elements.components(separatedBy: .newlines).compactMap{ $0 }
+        let elems = lines.flatMap { (line) -> [Double] in
+            line.components(separatedBy: .whitespaces)
+                .compactMap({ Double($0) })
+        }
+        
+        let n = lines[0].components(separatedBy: .whitespaces).count
+        let m = elems.count / n
+        
+        self.init(rowCount: m, columnCount: n, elements: elems)
+    }
+    
+    func saveTo(_ path: String?) {
+        guard let filePath = path else {
+            fatalError("Unable to find a file with this path.")
+        }
+        let file = TextFile(path: Path(rawValue: filePath), encoding: .utf8)
+        try? file.write(toString(), atomically: true)
+    }
+    
+}
 

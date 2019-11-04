@@ -46,7 +46,7 @@ extension Matrix {
     }
     
     static prefix func ~(lhs: Matrix) -> Matrix {
-        var result = Matrix(rowCount: lhs.columnCount, columnCount: lhs.rowCount, elements: Array(repeating: 0.0, count: lhs.columnCount*lhs.rowCount))
+        var result = Matrix(rowCount: lhs.columnCount, columnCount: lhs.rowCount)
         for r in 0..<lhs.rowCount {
             for c in 0..<lhs.columnCount {
                 result[r, c] = lhs[c, r]
@@ -74,7 +74,7 @@ private extension Matrix {
     
     static func multiply(A: Matrix, B: Matrix) -> Matrix {
         
-        var result = Matrix(rowCount: A.rowCount, columnCount: B.columnCount, elements: Array(repeating: 0.0, count: A.rowCount*B.columnCount))
+        var result = Matrix(rowCount: A.rowCount, columnCount: B.columnCount)
         for r in 0..<A.rowCount {
             let rowA = A[r]
             for c in 0..<B.columnCount {
