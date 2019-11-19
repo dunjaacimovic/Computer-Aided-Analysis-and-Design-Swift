@@ -16,11 +16,19 @@ struct Matrix {
 }
 
 extension Matrix {
-    init(rowCount: Int, columnCount: Int) {
+    init(rowCount: Int, columnCount: Int, identity: Bool? = false) {
         self.rowCount = rowCount
         self.columnCount = columnCount
         elements = Array(repeating: 0.0, count: rowCount*columnCount)
+        
+        // Creating identity matrix
+        guard identity == true else { return }
+        precondition(rowCount == columnCount, "Dimensions need to be equal for identity matrix.")
+        for i in 0..<rowCount {
+            elements[rowCount * i + i] = 1.0
+        }
     }
+    
 }
 
 // MARK: - Subscript -

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C08166E236C84E200F24FCB /* Examples in Resources */ = {isa = PBXBuildFile; fileRef = 4C08166D236C84E200F24FCB /* Examples */; };
 		4C264C562364AE6F00645561 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C264C552364AE6F00645561 /* Matrix.swift */; };
 		4C264C582365585C00645561 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C264C572365585C00645561 /* main.swift */; };
 		4C9CA2CC23649D2500FF872D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9CA2CB23649D2500FF872D /* Assets.xcassets */; };
 		4CC32CA8236F174E001A18F2 /* MatrixOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC32CA7236F174E001A18F2 /* MatrixOperations.swift */; };
-		4CC32CAA236F7BD1001A18F2 /* MatrixSupstitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC32CA9236F7BD1001A18F2 /* MatrixSupstitution.swift */; };
 		4CC32CAC236FD021001A18F2 /* Decompositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC32CAB236FD021001A18F2 /* Decompositions.swift */; };
+		4CCC71F22375E30C00106146 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC71F12375E30C00106146 /* ArrayExtension.swift */; };
+		4CCC71F42375FB1500106146 /* MatrixSubstitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC71F32375FB1500106146 /* MatrixSubstitution.swift */; };
+		4CCC71FB2376065600106146 /* Examples in Resources */ = {isa = PBXBuildFile; fileRef = 4CCC71FA2376065600106146 /* Examples */; };
+		4CD1EF2C237DD5BE009A6FAA /* Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1EF2B237DD5BE009A6FAA /* Equation.swift */; };
 		D5514EA7970028594241475A /* Pods_APR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BD43798F36E0768554B328 /* Pods_APR.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C08166D236C84E200F24FCB /* Examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Examples; sourceTree = "<group>"; };
 		4C264C552364AE6F00645561 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		4C264C572365585C00645561 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4C9CA2C423649D2300FF872D /* APR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,8 +46,11 @@
 		4C9CA2D623649D2500FF872D /* APRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9CA2E123649D2500FF872D /* APRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC32CA7236F174E001A18F2 /* MatrixOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixOperations.swift; sourceTree = "<group>"; };
-		4CC32CA9236F7BD1001A18F2 /* MatrixSupstitution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSupstitution.swift; sourceTree = "<group>"; };
 		4CC32CAB236FD021001A18F2 /* Decompositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decompositions.swift; sourceTree = "<group>"; };
+		4CCC71F12375E30C00106146 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		4CCC71F32375FB1500106146 /* MatrixSubstitution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixSubstitution.swift; sourceTree = "<group>"; };
+		4CCC71FA2376065600106146 /* Examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Examples; sourceTree = "<group>"; };
+		4CD1EF2B237DD5BE009A6FAA /* Equation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equation.swift; sourceTree = "<group>"; };
 		50BD43798F36E0768554B328 /* Pods_APR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72485EEC93D0C3E6C7C1CC49 /* Pods-APR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APR.debug.xcconfig"; path = "Target Support Files/Pods-APR/Pods-APR.debug.xcconfig"; sourceTree = "<group>"; };
 		CA3D039E89EB39883C2B50B0 /* Pods-APR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APR.release.xcconfig"; path = "Target Support Files/Pods-APR/Pods-APR.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,11 +85,13 @@
 		4C264C542364AD3E00645561 /* First */ = {
 			isa = PBXGroup;
 			children = (
-				4C08166D236C84E200F24FCB /* Examples */,
+				4CCC71FA2376065600106146 /* Examples */,
+				4CCC71EB2375E2DC00106146 /* Extensions */,
 				4C264C552364AE6F00645561 /* Matrix.swift */,
 				4CC32CA7236F174E001A18F2 /* MatrixOperations.swift */,
-				4CC32CA9236F7BD1001A18F2 /* MatrixSupstitution.swift */,
+				4CCC71F32375FB1500106146 /* MatrixSubstitution.swift */,
 				4CC32CAB236FD021001A18F2 /* Decompositions.swift */,
+				4CD1EF2B237DD5BE009A6FAA /* Equation.swift */,
 				4C264C572365585C00645561 /* main.swift */,
 			);
 			path = First;
@@ -121,6 +127,15 @@
 			);
 			path = APR;
 			sourceTree = "<group>";
+		};
+		4CCC71EB2375E2DC00106146 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC71F12375E30C00106146 /* ArrayExtension.swift */,
+			);
+			name = Extensions;
+			path = APR/Common/Extensions;
+			sourceTree = SOURCE_ROOT;
 		};
 		70988FBC6DED485BE9E859FC /* Pods */ = {
 			isa = PBXGroup;
@@ -251,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9CA2CC23649D2500FF872D /* Assets.xcassets in Resources */,
-				4C08166E236C84E200F24FCB /* Examples in Resources */,
+				4CCC71FB2376065600106146 /* Examples in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,8 +336,10 @@
 				4CC32CAC236FD021001A18F2 /* Decompositions.swift in Sources */,
 				4C264C562364AE6F00645561 /* Matrix.swift in Sources */,
 				4CC32CA8236F174E001A18F2 /* MatrixOperations.swift in Sources */,
+				4CD1EF2C237DD5BE009A6FAA /* Equation.swift in Sources */,
+				4CCC71F42375FB1500106146 /* MatrixSubstitution.swift in Sources */,
+				4CCC71F22375E30C00106146 /* ArrayExtension.swift in Sources */,
 				4C264C582365585C00645561 /* main.swift in Sources */,
-				4CC32CAA236F7BD1001A18F2 /* MatrixSupstitution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

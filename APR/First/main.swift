@@ -9,16 +9,18 @@
 import Foundation
 import FileKit
 
+let diagonal: Bool? = nil
 
 let pathForReading = Bundle.main.path(forResource: "M1", ofType: "txt", inDirectory: "Examples")
 var matrix = Matrix(matrixPath: pathForReading)
 let matrixB = Matrix(rowCount: 3, columnCount: 4, elements: [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1])
 let matrixC = Matrix(rowCount: 3, columnCount: 3, elements: [1, 1, 1, 1, 1, 1, 1, 1, 1])
 let matrixD = Matrix(rowCount: 3, columnCount: 3, elements: [1, 1, 1, 0, 0, 0, 1, 1, 1])
+let matrixE = Matrix(rowCount: 3, columnCount: 3, identity: true)
 
 let pathForWriting = Bundle.main.path(forResource: "M2", ofType: "txt", inDirectory: "Examples")
 matrix.saveTo(pathForWriting)
-
+print (diagonal == true)
 func zadatak1() {
 }
 zadatak1()
