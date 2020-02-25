@@ -13,6 +13,8 @@ struct Matrix {
     var rowCount: Int
     var columnCount: Int
     var elements: [Double]
+    
+    static let allowedDiff = 1e-7
 }
 
 extension Matrix {
@@ -28,7 +30,6 @@ extension Matrix {
             elements[rowCount * i + i] = 1.0
         }
     }
-    
 }
 
 // MARK: - Subscript -
@@ -59,9 +60,13 @@ extension Matrix {
 extension Matrix: Equatable {
     
     static func ==(lhs: Matrix, rhs: Matrix) -> Bool {
-        return lhs.rowCount == rhs.rowCount
-            && lhs.columnCount == rhs.columnCount
-            && lhs.elements == rhs.elements
+        guard lhs.rowCount == rhs.rowCount, lhs.columnCount == rhs.columnCount else { return false }
+        for r in 0..<lhs.rowCount {
+            for c in 0..<lhs.columnCount {
+                if lhs[r,c] - rhs[r,c] > allowedDiff { return false }
+            }
+        }
+        return true
     }
 }
 
@@ -74,11 +79,14 @@ extension Matrix: CustomStringConvertible {
     
     func toString() -> String {
         var matrix = String()
+        var element = 0.0
         for row in 0..<rowCount {
             for i in 0..<(columnCount-1) {
-                matrix.append(String(elements[row*columnCount + i]) + " ")
+                element = elements[row*columnCount + i] == -0.0 ? 0.0 : elements[row*columnCount + i]
+                matrix.append(String(element) + " ")//.rounded(to: 2)) + " " )
             }
-            matrix.append(String(elements[row*columnCount + columnCount-1]) + "\n")
+            element = elements[row*columnCount + columnCount-1] == -0.0 ? 0.0 : elements[row*columnCount + columnCount-1]
+            matrix.append(String(element) + "\n") //.rounded(to: 2)) + "\n")
         }
         return matrix
     }
