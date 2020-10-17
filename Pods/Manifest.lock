@@ -1,0 +1,16 @@
+PODS:
+  - FileKit (5.2.0)
+
+DEPENDENCIES:
+  - FileKit
+
+SPEC REPOS:
+  trunk:
+    - FileKit
+
+SPEC CHECKSUMS:
+  FileKit: 10bfd8a3023a0b09f24c9f49546cbbddf43fd464
+
+PODFILE CHECKSUM: 5f69b8b9e4d2c97f9ccce0916f5bf8229fbee8a8
+
+COCOAPODS: 1.8.4
